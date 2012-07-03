@@ -1,0 +1,17 @@
+h1. Play ProtocolBuffers
+
+h2. Introduction
+
+This plugin lets you invoke Play controller methods by sending "Google Protocol Buffers":http://code.google.com/apis/protocolbuffers/ messages to a Play server, and allows you to respond with a corresponding message too. Obviously, Play is designed around HTTP, so there are certain aspects of Play controllers that won't work when invoked through this plugin, so you should design around that, but the main use cases work fine.
+
+h2. An Example
+
+The most common use case of GPB is that messages are exchanged between applications, often on different servers (but it is not the only use case). This is precisely what this plugin is designed for. In our example, we will use GPB to send barcode numbers from a command-line application to Play, where the barcode will be stored in the database. I have used this same approach locally to scan barcodes on an Android mobile phone and look up the barcode information from "MusicBrainz":http://musicbrainz.org.
+
+h3. Getting Started
+
+To use GPB you need to install the Google Protocol Buffers compiler from Google's site. I will leave this as an exercise for the reader!
+
+h3. Defining the Wire Format
+
+The GPB compiler takes a .proto file and uses it to generate a .java file which can then be compiled into a .class and .jar in order to be used in the various applications that need to communicate.
